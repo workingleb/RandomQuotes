@@ -33,3 +33,28 @@ body {
 .quote-text {
   font-style: italic;
 }
+
+.favorite-card {
+  background-color: #fff;
+  color: darkcyan;
+  padding: 5px;
+  border-radius: 8px;
+  width: 25%;
+  font-style: italic;
+}
+
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.author {
+  font-style: normal;
+}
+
+.toogle-favorite-btn:disabled {
+  background-color: #0056b3;
+  cursor: not-allowed;
+}
