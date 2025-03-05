@@ -5,6 +5,8 @@ const quoteAuthorElement = document.getElementById('author');
 const generateBtn = document.getElementById('generate-btn');
 const toogleFavoriteBtn = document.getElementById('toogle-favorite-btn');
 const favoritesContainer = document.getElementById('favorites-container');
+const starIkon = document.getElementById('star-ikon');
+const starIkonFilled = document.getElementById('star-ikon-filled');
 
 let randomIndex;
 
@@ -22,12 +24,14 @@ const generateRandomQuote = () => {
   // } else {
   //   toogleFavoriteBtn.textContent = 'Add to favorites';
   // }
-  toogleFavoriteBtn.textContent =
-    quotes[randomIndex].isFavorite === true
-      ? 'Remove from favorites'
-      : 'Add to favorites';
+  if (quotes[randomIndex].isFavorite === true) {
+    starIkonFilled.style.display = 'block';
+    starIkon.style.display = 'none';
+  } else {
+    starIkonFilled.style.display = 'none';
+    starIkon.style.display = 'block';
+  }
 };
-
 const toogleFavorite = () => {
   quotes[randomIndex].isFavorite = !quotes[randomIndex].isFavorite;
   console.log(randomIndex);
@@ -37,10 +41,26 @@ const toogleFavorite = () => {
   // } else {
   //   toogleFavoriteBtn.textContent = 'Add to favorites';
   // }
-  toogleFavoriteBtn.textContent =
-    quotes[randomIndex].isFavorite === true
-      ? 'Remove from favorites'
-      : 'Add to favorites';
+  if (quotes[randomIndex].isFavorite === true) {
+    starIkonFilled.style.display = 'block';
+    starIkon.style.display = 'none';
+  } else {
+    starIkonFilled.style.display = 'none';
+    starIkon.style.display = 'block';
+  }
+
+  // const toogleFavoriteIcon = (isFavorite) => {
+  //   if (isFavorite === true) {
+  //     starIkonFilled.style.display = 'block';
+  //     starIkon.style.display = 'none';
+  //   } else {
+  //     starIkonFilled.style.display = 'none';
+  //     starIkon.style.display = 'block';
+  //   }
+  // }
+
+  // toogleFavoriteIcon(quotes[randomIndex].isFavorite);
+
   if (quotes[randomIndex].isFavorite === true) {
     const favoriteCard = document.createElement('div');
     favoriteCard.classList.add('favorite-card');
